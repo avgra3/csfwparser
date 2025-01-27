@@ -1,12 +1,30 @@
-﻿namespace fwparser.lib;
+﻿using Tomlyn;
+using Tomlyn.Model;
+
+namespace fwparser.lib;
 
 public class Utilities
 {
-    public static Dictionary<string, int[]> TomlFileToDicionary()
+    public static Dictionary<string, int[]> TomlFileToDictionary(
+            string tomlFile,
+            string configurationHeaderName = "Configuration"
+    )
     {
-        // TODO: Take in a toml file
-        // TODO: Map to the necessary dicionary format we need
-        throw new NotImplementedException("This is currently not implemented.");
+        string toml = File.ReadAllText(tomlFile);
+        var model = Toml.ToModel(toml);
+        var config = ((TomlTable)model[configurationHeaderName]!).ToDictionary();
+        Dictionary<string, int[]> results = new();
+        foreach (string key in config.Keys)
+        {
+            string[] intValues = (string.Join(",", (TomlArray)((TomlTable)model[configurationHeaderName]!)[key])).Split(",");
+            // Take each value from the configuration and include in an int[]
+            int[] intArrays = {
+                int.Parse(intValues[0]),
+                int.Parse(intValues[1])
+            };
+            results.Add(key, intArrays);
+        }
+        return results;
     }
 
     public static void OutputToFile(

@@ -47,6 +47,39 @@ customer_id,first_name,last_name,address,phone_number
 12345,John,Doe,123 Main St,1234567890
 12345,John,Doe,123 Main St,1234567890
 */
+
+// Using a Toml file!
+string ourTomlFile = "../fooConfig.toml";
+
+Dictionary<string, int[]> tomlConfig = Utilities.TomlFileToDicionary(
+                tomlFile: ourTomlFile,
+                configurationHeaderName: "Configuration"); // You can define the name or use the default
+// What if we wrote to a file with our configuration file
+Utilities.OutputToFile(
+                inputData: fixedWidthFile,
+                outputFileName: "./foo_toml_cleaned.csv",
+                headerConfig: tomlConfig,
+                trimWhiteSpace: true,
+                offset: 0,
+                delimiter: ValidDelimiter.PIPE,
+                overWriteFileIfExists: true);
+
+// Check we actually wrote to the file
+var tomlExampleOutput = File.ReadAllText("./foo_toml_cleaned.csv");
+Console.WriteLine(tomlExampleOutput);
+/*
+customer_id|first_name|last_name|address|phone_number
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|1234567890
+12345|John|Doe|123 Main St|123456789
+*/
 ```
 
 ## Motivation
@@ -65,6 +98,6 @@ If you find any issues while using this library, feel free to open an issue or p
 
 ## TODOs
 
-- [ ] Add toml support. Where we can use a toml file, that will be loaded into the library and we can proceed from there.
-- [ ] Add support to directly write to a file with a specified delimiter.
+- [x] Add toml support. Where we can use a toml file, that will be loaded into the library and we can proceed from there.
+- [x] Add support to directly write to a file with a specified delimiter.
 

@@ -47,7 +47,7 @@ Utilities.OutputToFile(
                 overWriteFileIfExists: true);
 
 // Check we actually wrote to the file
-var exampleOutput = File.ReadAllText("foo_cleaned.csv");
+var exampleOutput = File.ReadAllText("./foo_cleaned.csv");
 Console.WriteLine(exampleOutput);
 /*
 customer_id|first_name|last_name|address|phone_number
@@ -65,3 +65,28 @@ customer_id|first_name|last_name|address|phone_number
 
 // Delete the file we created
 File.Delete("./foo_cleaned.csv");
+
+
+// Using a Toml file!
+string ourTomlFile = "../fooConfig.toml";
+
+Dictionary<string, int[]> tomlConfig = Utilities.TomlFileToDicionary(
+                tomlFile: ourTomlFile,
+                configurationHeaderName: "Configuration"); // You can define the name or use the default
+// What if we wrote to a file with our configuration file
+Utilities.OutputToFile(
+                inputData: fixedWidthFile,
+                outputFileName: "./foo_toml_cleaned.csv",
+                headerConfig: tomlConfig,
+                trimWhiteSpace: true,
+                offset: 0,
+                delimiter: ValidDelimiter.PIPE,
+                overWriteFileIfExists: true);
+
+// Check we actually wrote to the file
+var tomlExampleOutput = File.ReadAllText("./foo_toml_cleaned.csv");
+Console.WriteLine(tomlExampleOutput);
+
+// Delete the file we created
+File.Delete("./foo_toml_cleaned.csv");
+

@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <None Include="..\foo.txt" CopyToOutputDirectory="Always" />
+    <None Include="..\fooConfig.toml" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
   <ItemGroup>
