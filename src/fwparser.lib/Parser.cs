@@ -2,7 +2,7 @@
 
 public static class Parser
 {
-    private static List<string> GetColumnNames(
+    public static List<string> GetColumnNames(
             Dictionary<string, int[]> headerConfig
             )
     {
@@ -16,7 +16,7 @@ public static class Parser
         return sortedHeaders;
     }
 
-    private static Dictionary<string, string> ParseDataByLine(
+    public static Dictionary<string, string> ParseDataByLine(
             Dictionary<string, int[]> headerConfig,
             string rawDataLine,
             bool trimWhiteSpace = false,
@@ -32,6 +32,7 @@ public static class Parser
                 throw new IndexOutOfRangeException($"The index of value '{startValue} is less than zero (NOT ALLOWED). Please check your configuration.");
             }
             int endValue = headerConfig[key][1];
+
             string data = rawDataLine.Substring(startIndex: startValue, length: endValue);
             if (trimWhiteSpace)
             {
@@ -42,7 +43,7 @@ public static class Parser
         return parsedFields;
     }
 
-    private static List<Dictionary<string, string>> ParseAllData(
+    public static List<Dictionary<string, string>> ParseAllData(
             List<string> allData,
             Dictionary<string, int[]> headerConfig,
             bool trimWhiteSpace = false,
@@ -64,7 +65,7 @@ public static class Parser
         return result;
     }
 
-    private static List<string> SplitRawData(string rawDataFile)
+    public static List<string> SplitRawData(string rawDataFile)
     {
         List<string> data = new();
         // if path is file: read and split lines, return result

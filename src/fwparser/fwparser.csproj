@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <None Include="foo.txt" CopyToOutputDirectory="Always" />
+    <None Include="..\foo.txt" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
   <ItemGroup>
