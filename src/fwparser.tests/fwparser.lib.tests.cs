@@ -59,6 +59,26 @@ public class FwparserLibTests
     }
 
     [Fact]
+    public void TestTomlFileToDictionary()
+    {
+        string inputToml = "./fooConfig.toml";
+        string configHeader = "Configuration";
+        Dictionary<string, int[]> expectedResult = new();
+        expectedResult.Add("customer_id", new int[] { 0, 5 });
+        expectedResult.Add("first_name", new int[] { 5, 10 });
+        expectedResult.Add("last_name", new int[] { 15, 10 });
+        expectedResult.Add("address", new int[] { 25, 20 });
+        expectedResult.Add("phone_number", new int[] { 45, 10 });
+
+        var actualResult = Utilities.TomlFileToDictionary(
+                tomlFile: inputToml,
+                configurationHeaderName: configHeader
+        );
+
+        Assert.Equal(expectedResult, actualResult);
+    }
+
+    [Fact]
     public void TestParseToDataFile()
     {
         string outputFilePath = "./testCase.csv";

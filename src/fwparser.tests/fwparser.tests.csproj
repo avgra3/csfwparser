@@ -40,5 +40,8 @@
     <None Include="..\foo.txt" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
-
+  <ItemGroup>
+    <None Include="..\fooConfig.toml" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+  
 </Project>
