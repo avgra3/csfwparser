@@ -6,7 +6,7 @@ You might be wondering why the name. Simple: I have a [Python version](https://g
 
 ## Example
 
-This code is also located [here](./src/fwparser.example/Program.cs).
+This code is also located [here](./src/fwparser.examples/Program.cs).
 
 ```cs
 using fwparser.lib;
@@ -83,7 +83,7 @@ customer_id|first_name|last_name|address|phone_number
 
 ### CLI tool
 
-This assumes you installed as a tool. For information on how to do this, it is detailed [below](##building-cli-tool).
+This assumes you installed as a tool. For information on how to do this, it is detailed [below](#building-cli-tool).
 
 ```bash
 fwparser --help
