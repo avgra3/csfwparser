@@ -1,7 +1,3 @@
----
-title: CSFWParser
-data: January 28, 2025
----
 # C# Fixed Width Parser (CSFWParser)
 
 A simple library to help you parse your fixed width files, written in pure C#.
