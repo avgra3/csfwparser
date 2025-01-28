@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <!-- Package Information  -->
-    <PackageId>avgra.fwparser.lib</PackageId>
+    <PackageId>avgra3.fwparser.lib</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Antony G.</Authors>
     <Description>A helper library for the fwparser.cli tool</Description>

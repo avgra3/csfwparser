@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <!-- Package Information  -->
-    <PackageId>avgra.fwparser.cli</PackageId>
+    <PackageId>avgra3.fwparser.cli</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Antony G.</Authors>
     <Description>A CLI tool to parse fixed width files and output them to standard out or to a spcified file</Description>
