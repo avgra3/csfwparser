@@ -1,25 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <!-- Package Information  -->
-    <PackageId>avgra.fwparser.lib</PackageId>
+    <PackageId>avgra.fwparser.cli</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Antony G.</Authors>
-    <Description>A helper library for the fwparser.cli tool</Description>
+    <Description>A CLI tool to parse fixed width files and output them to standard out or to a spcified file</Description>
     <Copyright>MIT</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/avgra3/csfwparser</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/avgra3/csfwparser</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackAsTool>false</PackAsTool>
-    </PropertyGroup>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>fwparser</ToolCommandName>
+    <PackageOutputPath>".\nupkgs"</PackageOutputPath>
+  </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Tomlyn" Version="0.18.0" />
+    <PackageReference Include="Cocona" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\fwparser.lib\fwparser.lib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,5 +36,4 @@
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="" />
   </ItemGroup>
-
 </Project>

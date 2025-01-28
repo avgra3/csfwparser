@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fwparser", "fwparser\fwparser.csproj", "{AC4A5D99-87B1-4BA4-9CF5-0B20494E3A99}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fwparser.lib", "fwparser.lib\fwparser.lib.csproj", "{6C8C015C-4709-45F5-95BD-0DBCB5C02D36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fwparser.cli", "fwparser.cli\fwparser.cli.csproj", "{0C100600-DF49-4C55-87DB-D864D19E6E05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +14,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC4A5D99-87B1-4BA4-9CF5-0B20494E3A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC4A5D99-87B1-4BA4-9CF5-0B20494E3A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC4A5D99-87B1-4BA4-9CF5-0B20494E3A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC4A5D99-87B1-4BA4-9CF5-0B20494E3A99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C8C015C-4709-45F5-95BD-0DBCB5C02D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C8C015C-4709-45F5-95BD-0DBCB5C02D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C8C015C-4709-45F5-95BD-0DBCB5C02D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C8C015C-4709-45F5-95BD-0DBCB5C02D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C100600-DF49-4C55-87DB-D864D19E6E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C100600-DF49-4C55-87DB-D864D19E6E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C100600-DF49-4C55-87DB-D864D19E6E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C100600-DF49-4C55-87DB-D864D19E6E05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -50,36 +50,7 @@ public class Utilities
             return;
         }
 
-        char delim;
-        switch (delimiter)
-        {
-            case ValidDelimiter.COLON:
-                {
-                    delim = ':';
-                    break;
-                }
-            case ValidDelimiter.SEMICOLON:
-                {
-                    delim = ';';
-                    break;
-                }
-            case ValidDelimiter.COMMA:
-                {
-                    delim = ',';
-                    break;
-                }
-            case ValidDelimiter.PIPE:
-                {
-                    delim = '|';
-                    break;
-                }
-            default:
-                {
-                    delim = ',';
-                    break;
-                }
-        }
-        ;
+        char delim = GetDelimiter(eDelim: delimiter);
 
         string parsedData = "";
 
@@ -116,5 +87,69 @@ public class Utilities
             File.AppendAllText(outputFileName, parsedData);
         }
         return;
+    }
+
+    public static char GetDelimiter(ValidDelimiter eDelim)
+    {
+        char delim;
+        switch (eDelim)
+        {
+            case ValidDelimiter.COLON:
+                {
+                    delim = ':';
+                    break;
+                }
+            case ValidDelimiter.SEMICOLON:
+                {
+                    delim = ';';
+                    break;
+                }
+            case ValidDelimiter.COMMA:
+                {
+                    delim = ',';
+                    break;
+                }
+            case ValidDelimiter.PIPE:
+                {
+                    delim = '|';
+                    break;
+                }
+            default:
+                {
+                    delim = ',';
+                    break;
+                }
+        }
+        ;
+        return delim;
+    }
+
+    public static ValidDelimiter GetDelimiterEnum(char delimiter)
+    {
+        switch (delimiter)
+        {
+            case ':':
+                {
+                    return ValidDelimiter.COLON;
+                }
+            case ';':
+                {
+                    return ValidDelimiter.SEMICOLON;
+                }
+            case ',':
+                {
+                    return ValidDelimiter.COMMA;
+                }
+            case '|':
+                {
+                    return ValidDelimiter.PIPE;
+
+                }
+            default:
+                {
+                    return ValidDelimiter.COMMA;
+                }
+        }
+        ;
     }
 }

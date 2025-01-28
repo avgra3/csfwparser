@@ -70,7 +70,7 @@ File.Delete("./foo_cleaned.csv");
 // Using a Toml file!
 string ourTomlFile = "../fooConfig.toml";
 
-Dictionary<string, int[]> tomlConfig = Utilities.TomlFileToDicionary(
+Dictionary<string, int[]> tomlConfig = Utilities.TomlFileToDictionary(
                 tomlFile: ourTomlFile,
                 configurationHeaderName: "Configuration"); // You can define the name or use the default
 // What if we wrote to a file with our configuration file

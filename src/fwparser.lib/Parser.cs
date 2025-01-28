@@ -100,7 +100,8 @@ public static class Parser
             string rawDataFile,
             Dictionary<string, int[]> headerConfig,
             bool trimWhiteSpace = false,
-            int offset = 0
+            int offset = 0,
+            ValidDelimiter delimiter = ValidDelimiter.COMMA
             )
     {
         string parsedData = "";
@@ -113,21 +114,22 @@ public static class Parser
             trimWhiteSpace: trimWhiteSpace,
             offset: offset
     );
+        char delim = Utilities.GetDelimiter(eDelim: delimiter);
 
         foreach (string header in headers)
         {
-            parsedData += $"{header},";
+            parsedData += $"{header}{delim}";
         }
-        parsedData = parsedData.TrimEnd(',') + "\r\n";
+        parsedData = parsedData.TrimEnd(delim) + "\r\n";
 
         foreach (Dictionary<string, string> line in dataList)
         {
             string data = "";
             foreach (string value in line.Keys)
             {
-                data += line[value] + ",";
+                data += line[value] + $"{delim}";
             }
-            parsedData += data.TrimEnd(',') + "\r\n";
+            parsedData += data.TrimEnd(delim) + "\r\n";
         }
         return parsedData;
     }
